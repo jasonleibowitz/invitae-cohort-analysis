@@ -15,15 +15,21 @@ After you cloned this repo, navigate to the project's root folder in your termin
 docker-compose up -d
 ```
 
-You will see an output where the three applications (web front-end, api, and database) as all being build. As soon as that is finished, and especially if you are rebuilding the containers, you will need to run a quick migration script. You can do that by typing the following into your terminal:
+You will see an output where the three applications (web front-end, api, and database) as all being build. As soon as that is finished you will need to run a quick migration script. You can do that by typing the following into your terminal:
 
 ```
 docker exec api sequelize db:migrate
 ```
 
-You can avoid having to do the migrations again by running `docker-compose pause` isntead of `docker-compose down`.
+## Starting and Stopping the App
 
-Once that's done you can visit the web front end by visiting `localhost:80`. The API is available behind port `3000` and the database is behind port `8001`.
+Once you've built and started the containers you can stop them at any time by running `docker-compose stop`. You can restart them again by just running `docker-compose start`.
+
+## Using the Application
+
+Once you've finished building and starting the app, you can visit the web front end by visiting `localhost:80`. The API is available behind port `3000` and the database is behind port `8001`.
+
+First, drag your customers csv file into the active drag-area that instructions you to do so. Once that's done and your customers have been uploaded, do the same with your orders. Orders may take a little while longer than customers, but once that's done the app will receive the analyzed cohort data and display a small graphic. This graphic is not the full report, click "Download as CSV" to view the full report.
 
 # Project Structure
 This project is in a monorepo, meaning that both the web front-end and the api exist within this one project.
