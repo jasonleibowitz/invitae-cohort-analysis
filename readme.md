@@ -12,14 +12,16 @@ On a mac I recommend installing [Docker Desktop](https://www.docker.com/products
 After you cloned this repo, navigate to the project's root folder in your terminal. Then run the following command:
 
 ```
-docker-compose up -d --build
+docker-compose up -d
 ```
 
-You will see an output where the three applications (web front-end, api, and database) as all being build. As soon as that is finished, and especially if this is your first time running the build process, you will need to run a quick migration script. You can do that by typing the following into your terminal:
+You will see an output where the three applications (web front-end, api, and database) as all being build. As soon as that is finished, and especially if you are rebuilding the containers, you will need to run a quick migration script. You can do that by typing the following into your terminal:
 
 ```
 docker exec api sequelize db:migrate
 ```
+
+You can avoid having to do the migrations again by running `docker-compose pause` isntead of `docker-compose down`.
 
 Once that's done you can visit the web front end by visiting `localhost:80`. The API is available behind port `3000` and the database is behind port `8001`.
 
