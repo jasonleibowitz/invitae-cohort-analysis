@@ -42,7 +42,7 @@ exports.seed = async (request, h) => {
   try {
     const customersToCreate = request.payload.map(customer => ({
       invitaeId: customer.id,
-      createdAt: customer.created,
+      createdAt: moment(customer.created).tz('America/Los_Angeles'),
     }));
 
     const customers = await Customer.bulkCreate(customersToCreate);

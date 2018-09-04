@@ -50,6 +50,7 @@ const updateCustomersFirstOrder = customers => {
  * by that cohort
  * @param {Object} groupedCustomers Customers grouped by signup date
  * @param {string} cohortWeek Cohort week for which to return orders
+ * @returns {Array} list of all order objects
  */
 const getAllCustomerOrdersFromCohort = (groupedCustomers, cohortWeek) =>
   groupedCustomers[cohortWeek].reduce((result, customer) => result.concat(customer.Orders), []);
