@@ -1,0 +1,32 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "csv": "^3.1.0",
+    "emotion": "^9.2.8",
+    "immutable": "^3.8.2",
+    "papaparse": "^4.6.0",
+    "ramda": "^0.25.0",
+    "react": "^16.4.2",
+    "react-cohort-graph": "^1.0.6",
+    "react-dom": "^16.4.2",
+    "react-dropzone": "^5.0.1",
+    "react-immutable-proptypes": "^2.1.0",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
+    "redux-immutable": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^3.0.1"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  web:
+    container_name: web
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+  api:
+    container_name: api
+    build:
+      context: ./api/
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://jason@db:5432/invitae_production
+  db:
+    container_name: db
+    image: postgres:9.6-alpine
+    ports:
+      - '8001:5432'
+    environment:
+      POSTGRES_USER: jason
+      POSTGRES_DB: invitae_production
