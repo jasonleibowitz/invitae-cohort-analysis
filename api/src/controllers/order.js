@@ -22,6 +22,9 @@ exports.index = async (request, h) => {
   }
 }
 
+// NOTE: Due to Postgres Performance issues, i.e. TimeOut we are not
+// using Order.bulkCreate. Instead we're using the async library's
+// queue to create multiple threads in which to save Order objects.
 const bulkSave = orders => {
   return new Promise(async (resolve, reject) => {
     let createdOrders = [];
