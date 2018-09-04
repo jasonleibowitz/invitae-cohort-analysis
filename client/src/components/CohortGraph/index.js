@@ -9,7 +9,7 @@ export default class CohortGraph extends PureComponent {
   componentWillMount() {
     const { data } = this.props;
     const parsedData = data.sort((a, b) => a.get('cohortKey').localeCompare(b.get('cohortKey'))).reduce((result, cohort) => {
-      const orderArr = cohort.get('orders').map(o => o.get('numOrders'));
+      const orderArr = cohort.get('orders').map(o => o.get('uniqueOrderers'));
       result[cohort.get('dateRange')] = [cohort.get('numCustomers'), ...orderArr];
       return result;
     }, {});
