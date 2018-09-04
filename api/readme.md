@@ -8,3 +8,4 @@ This is the API for the Cohort Analysis application. For more information view t
 - [ ] Add tests for methods that touch the database
 - [ ] Add more validations. What if the uploaded CSV doesn't match what we expect?
 - [ ] Seeding the DB is slow. Maybe use Redis instead.
+- [ ] Created a production-version of npm start that uses pm2, so the app stays up or relaunches it if crashes
