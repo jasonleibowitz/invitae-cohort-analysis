@@ -1,5 +1,5 @@
 const moment = require('moment-timezone');
-const { groupByCreatedAt } = require('../utils/data');
+const { groupByCreatedAt, uniqueItemsByCustomerId } = require('../utils/data');
 const { WEEK_KEY } = require('../utils/enums');
 
 /**
@@ -10,12 +10,12 @@ const { WEEK_KEY } = require('../utils/enums');
 const convertOrdersToCohortOrderMap = groupedOrders => Object.keys(groupedOrders).map(orderGroup => {
   const numOrders = groupedOrders[orderGroup].length;
   const firstOrders = groupedOrders[orderGroup].filter(order => order.firstOrder).length;
-  const subsequentOrders = numOrders - firstOrders;
+  const uniqueOrderers = uniqueItemsByCustomerId(groupedOrders[orderGroup]);
 
   return {
     firstOrders,
     numOrders,
-    subsequentOrders,
+    uniqueOrderers,
     week: orderGroup,
   };
 }).sort((a, b) => a.week.localeCompare(b.week));;
@@ -47,10 +47,10 @@ const getCohortOrdersByDate = (orders, cohortDate) => {
       return cohortOrdersByWeek.find(i => i.week === currentWeek);
     } else {
       return {
-        week: currentWeek,
-        numOrders: 0,
         firstOrders: 0,
-        subsequentOrders: 0,
+        numOrders: 0,
+        uniqueOrderers: 0,
+        week: currentWeek,
       }
     }
   });

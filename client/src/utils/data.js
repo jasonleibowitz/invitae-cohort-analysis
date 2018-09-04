@@ -18,8 +18,9 @@ export const generateDataArray = inputData => {
 
     const orders = c.get('orders').map(o => {
       const firstOrders = o.get('firstOrders');
-      const subsequentOrders = o.get('subsequentOrders');
-      return `${Math.floor((subsequentOrders / customers) * 100)}% orders (${subsequentOrders})\r${Math.floor((firstOrders / customers) * 100)}% 1st orders (${firstOrders})`;
+      const uniqueOrderers = o.get('uniqueOrderers');
+
+      return `${Math.round((uniqueOrderers / customers) * 100)}% orderers (${uniqueOrderers})\r${Math.round((firstOrders / customers) * 100)}% 1st orders (${firstOrders})`;
     });
 
     return [cohort, customers, ...orders];

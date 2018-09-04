@@ -12,22 +12,22 @@ describe('createCohortAnalysisFromCustomerGroup', () => {
       "orders": [{
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_31"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_32"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_33"
       }, {
         "firstOrders": 0,
         "numOrders": 1,
-        "subsequentOrders": 1,
+        "uniqueOrderers": 1,
         "week": "2015_34"
       }],
       "startDate": moment("2015-07-26T04:00:00.000Z").toDate()
@@ -39,92 +39,92 @@ describe('createCohortAnalysisFromCustomerGroup', () => {
       "orders": [{
         "firstOrders": 1,
         "numOrders": 1,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 1,
         "week": "2015_30"
       }, {
         "firstOrders": 1,
         "numOrders": 1,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 1,
         "week": "2015_31"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_32"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_33"
       }, {
         "firstOrders": 0,
         "numOrders": 1,
-        "subsequentOrders": 1,
+        "uniqueOrderers": 1,
         "week": "2015_34"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_35"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_36"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_37"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_38"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_39"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_40"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_41"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_42"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_43"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_44"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_45"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_46"
       }, {
         "firstOrders": 0,
         "numOrders": 1,
-        "subsequentOrders": 1,
+        "uniqueOrderers": 1,
         "week": "2015_47"
       }],
       "startDate": moment("2015-07-19T04:00:00.000Z").toDate()
@@ -136,12 +136,12 @@ describe('createCohortAnalysisFromCustomerGroup', () => {
       "orders": [{
         "firstOrders": 1,
         "numOrders": 1,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 1,
         "week": "2015_28"
       }, {
         "firstOrders": 0,
         "numOrders": 1,
-        "subsequentOrders": 1,
+        "uniqueOrderers": 1,
         "week": "2015_29"
       }],
       "startDate": moment("2015-07-05T04:00:00.000Z").toDate()
@@ -153,87 +153,87 @@ describe('createCohortAnalysisFromCustomerGroup', () => {
       "orders": [{
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_27"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_28"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_29"
       }, {
         "firstOrders": 2,
         "numOrders": 2,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 2,
         "week": "2015_30"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_31"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_32"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_33"
       }, {
         "firstOrders": 1,
         "numOrders": 1,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 1,
         "week": "2015_34"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_35"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_36"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_37"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_38"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_39"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_40"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_41"
       }, {
         "firstOrders": 0,
         "numOrders": 0,
-        "subsequentOrders": 0,
+        "uniqueOrderers": 0,
         "week": "2015_42"
       }, {
         "firstOrders": 0,
         "numOrders": 1,
-        "subsequentOrders": 1,
+        "uniqueOrderers": 1,
         "week": "2015_43"
       }],
       "startDate": moment("2015-06-28T04:00:00.000Z").toDate()

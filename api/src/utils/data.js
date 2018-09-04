@@ -10,6 +10,22 @@ const { WEEK_KEY } = require('./enums');
 const groupByCreatedAt = R.groupBy(obj =>
   moment(obj['createdAt']).format(WEEK_KEY));
 
+/**
+ * Group any list of objects by customerId prop
+ * @param {Array} Iterable with customerId property
+ * @returns {Object} objects grouped by customerId
+ */
+const groupByCustomerId = R.groupBy(obj => obj.customerId);
+
+/**
+ * Get the number of unique items by customerId
+ * @param {Array} Iterable with customerId property
+ * @returns {number} Number of unique items by customerId
+ */
+const uniqueItemsByCustomerId = R.pipe(groupByCustomerId, R.keys, R.length);
+
 module.exports = {
   groupByCreatedAt,
+  groupByCustomerId,
+  uniqueItemsByCustomerId,
 };
