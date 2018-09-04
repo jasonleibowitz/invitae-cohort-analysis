@@ -9,6 +9,7 @@ export const getHomepageLoadingText = ({
   isCustomerRequestInProgress = false,
   isOrderRequestInProgress = false,
   isCohortAnalysisRequestInProgress = false,
+  isPurgeDBInProgress = false,
 } = {}) => {
   if (isCustomerRequestInProgress) {
     return 'Fetching Customers';
@@ -16,6 +17,8 @@ export const getHomepageLoadingText = ({
     return 'Fetching Orders';
   } else if (isCohortAnalysisRequestInProgress) {
     return 'Loading Cohort Analysis Data';
+  } else if (isPurgeDBInProgress) {
+    return 'Clearing Database...'
   } else {
     return null;
   }

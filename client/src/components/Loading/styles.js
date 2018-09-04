@@ -10,6 +10,7 @@ const containerStyles = css`{
   bottom: 0;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }`;
 
 const spin = keyframes`

@@ -6,6 +6,7 @@ describe('ui utils', () => {
       isCustomerRequestInProgress: true,
       isOrderRequestInProgress: false,
       isCohortAnalysisRequestInProgress: false,
+      isPurgeDBInProgress: false,
     })
     expect(result).toEqual('Fetching Customers');
   });
@@ -15,6 +16,7 @@ describe('ui utils', () => {
       isCustomerRequestInProgress: false,
       isOrderRequestInProgress: true,
       isCohortAnalysisRequestInProgress: false,
+      isPurgeDBInProgress: false,
     })
     expect(result).toEqual('Fetching Orders');
   });
@@ -24,8 +26,19 @@ describe('ui utils', () => {
       isCustomerRequestInProgress: false,
       isOrderRequestInProgress: false,
       isCohortAnalysisRequestInProgress: true,
+      isPurgeDBInProgress: false,
     })
     expect(result).toEqual('Loading Cohort Analysis Data');
+  });
+
+  test('It returns the proper text if cohort analysis request is in progress', () => {
+    const result = getHomepageLoadingText({
+      isCustomerRequestInProgress: false,
+      isOrderRequestInProgress: false,
+      isCohortAnalysisRequestInProgress: false,
+      isPurgeDBInProgress: true,
+    })
+    expect(result).toEqual('Clearing Database...');
   });
 
   test('It returns null if none of the passed in requests are in progress', () => {
@@ -33,6 +46,7 @@ describe('ui utils', () => {
       isCustomerRequestInProgress: false,
       isOrderRequestInProgress: false,
       isCohortAnalysisRequestInProgress: false,
+      isPurgeDBInProgress: false,
     })
     expect(result).toEqual(null);
   });

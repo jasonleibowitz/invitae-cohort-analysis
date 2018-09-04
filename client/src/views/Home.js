@@ -11,6 +11,7 @@ import { purgeDatabase } from '../actions/base';
 import { fetchCohortAnalysis } from '../actions/cohortAnalysis';
 import { fetchCustomers, seedCustomers } from '../actions/customers';
 import { fetchOrders, seedOrders } from '../actions/orders';
+import { didPurgeDBSucceed, isPurgeDBInProgress } from '../reducers/base';
 import {
   didCohortAnalysisRequestSucceed,
   getCohortAnalysis,
@@ -52,11 +53,13 @@ class Home extends PureComponent {
     didCohortAnalysisRequestSucceed: PropTypes.bool.isRequired,
     didCustomerRequestSucceeded: PropTypes.bool.isRequired,
     didOrderRequestSucceeded: PropTypes.bool.isRequired,
+    didPurgeDBSucceed: PropTypes.bool.isRequired,
     fetchCohortAnalysis: PropTypes.func.isRequired,
     fetchCustomers: PropTypes.func.isRequired,
     isCohortAnalysisRequestInProgress: PropTypes.bool.isRequired,
     isCustomerRequestInProgress: PropTypes.bool.isRequired,
     isOrderRequestInProgress: PropTypes.bool.isRequired,
+    isPurgeDBInProgress: PropTypes.bool.isRequired,
     numCustomers: PropTypes.number,
     numOrders: PropTypes.number,
     purgeDatabase: PropTypes.func.isRequired,
@@ -118,6 +121,7 @@ class Home extends PureComponent {
       isCohortAnalysisRequestInProgress,
       isCustomerRequestInProgress,
       isOrderRequestInProgress,
+      isPurgeDBInProgress,
       numCustomers,
       numOrders,
       purgeDatabase,
@@ -126,8 +130,8 @@ class Home extends PureComponent {
     return (
       <div className={containerStyles}>
         {
-          (isCustomerRequestInProgress || isOrderRequestInProgress || isCohortAnalysisRequestInProgress) &&
-          <Loading loadingText={getHomepageLoadingText({ isCustomerRequestInProgress, isOrderRequestInProgress, isCohortAnalysisRequestInProgress })} />
+          (isCustomerRequestInProgress || isOrderRequestInProgress || isCohortAnalysisRequestInProgress || isPurgeDBInProgress) &&
+          <Loading loadingText={getHomepageLoadingText({ isCustomerRequestInProgress, isOrderRequestInProgress, isCohortAnalysisRequestInProgress, isPurgeDBInProgress })} />
         }
         <Title>Invitae Cohort Analysis</Title>
 
@@ -163,9 +167,11 @@ export default connect(createStructuredSelector({
   didCohortAnalysisRequestSucceed,
   didCustomerRequestSucceeded,
   didOrderRequestSucceeded,
+  didPurgeDBSucceed,
   isCohortAnalysisRequestInProgress,
   isCustomerRequestInProgress,
   isOrderRequestInProgress,
+  isPurgeDBInProgress,
   numCustomers: getNumCustomers,
   numOrders: getNumOrders,
 }), {
